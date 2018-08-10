@@ -12,6 +12,16 @@ FormView.prototype.bindEvents = function () {
   });
 };
 
+FormView.prototype.displayDropDown = function(countries) {
+  var names = countries.map(country => country.name);
+  var dropdown = document.querySelector('#dropdown');
 
+  names.forEach((name, index) => {
+    const option = document.createElement('option');
+    option.textContent = `${name}`;
+    option.value = index;
+    dropdown.appendChild(option);
+  });
+};
 
 module.exports = FormView;
