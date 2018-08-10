@@ -1,0 +1,17 @@
+body {
+  background-color: gold;
+  font-family: sans-serif;
+  border: 0.3rem solid black;
+}
+
+.top {
+  border: 0.3rem solid blue;
+}
+
+.main {
+  border: 0.3rem solid red;
+}
+
+h1 {
+  text-align: center;
+}
