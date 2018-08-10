@@ -10,6 +10,16 @@ FormView.prototype.bindEvents = function () {
     console.log(this.countries);
     this.displayDropDown(this.countries);
   });
+
+  document.querySelector('#dropdown').addEventListener('change', (evt) => {
+    var container = document.querySelector('.main');
+    container.innerHTML = '';
+    const selectedCountry = evt.target.value;
+    console.log(selectedCountry);
+    var name = document.createElement('p');
+    name.textContent = selectedCountry;
+    container.appendChild(name);
+  });
 };
 
 FormView.prototype.displayDropDown = function(countries) {
@@ -19,7 +29,7 @@ FormView.prototype.displayDropDown = function(countries) {
   names.forEach((name, index) => {
     const option = document.createElement('option');
     option.textContent = `${name}`;
-    option.value = index;
+    option.value = name;
     dropdown.appendChild(option);
   });
 };

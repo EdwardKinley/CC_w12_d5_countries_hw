@@ -12,6 +12,14 @@ body {
   border: 0.3rem solid red;
 }
 
+.top, .main {
+  padding: 1rem;
+}
+
 h1 {
   text-align: center;
+}
+
+select {
+  font-size: 1rem;
 }
