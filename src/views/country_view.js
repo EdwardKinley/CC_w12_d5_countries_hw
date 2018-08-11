@@ -34,8 +34,6 @@ CountryView.prototype.render = function () {
   countryContainer.appendChild(area);
 
   this.container.appendChild(countryContainer);
-
-  console.log(this.country);
 };
 
 module.exports = CountryView;

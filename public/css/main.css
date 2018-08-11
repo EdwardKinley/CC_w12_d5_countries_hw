@@ -25,7 +25,9 @@ select {
 }
 
 .countryContainer {
-  border: 0.3rem solid green;
+  /* border: 0.3rem solid green; */
+  background-color: linen;
+  color: maroon;
   padding: 1rem;
   margin: 1rem;
 }
