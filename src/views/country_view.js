@@ -6,29 +6,34 @@ const CountryView = function (container, country) {
 };
 
 CountryView.prototype.render = function () {
+  const countryContainer = document.createElement('div');
+  countryContainer.classList.add('countryContainer');
+
   const name = document.createElement('h3');
   name.textContent = `${this.country.name}`;
-  this.container.appendChild(name);
+  countryContainer.appendChild(name);
 
   const region = document.createElement('h5');
   region.textContent = `Region: ${this.country.region}`;
-  this.container.appendChild(region);
+  countryContainer.appendChild(region);
 
   const subregion = document.createElement('h5');
   subregion.textContent = `Subregion: ${this.country.subregion}`;
-  this.container.appendChild(subregion);
+  countryContainer.appendChild(subregion);
 
   const capital = document.createElement('h5');
   capital.textContent = `Capital: ${this.country.capital}`;
-  this.container.appendChild(capital);
+  countryContainer.appendChild(capital);
 
   const population = document.createElement('h5');
   population.textContent = `Population: ${this.country.population}`;
-  this.container.appendChild(population);
+  countryContainer.appendChild(population);
 
   const area = document.createElement('h5');
   area.textContent = `Area: ${this.country.area} sq km`;
-  this.container.appendChild(area);
+  countryContainer.appendChild(area);
+
+  this.container.appendChild(countryContainer);
 
   console.log(this.country);
 };

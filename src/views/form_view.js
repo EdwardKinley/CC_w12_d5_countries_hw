@@ -14,7 +14,7 @@ FormView.prototype.bindEvents = function () {
 
   document.querySelector('#dropdown').addEventListener('change', (evt) => {
     var container = document.querySelector('.main');
-    container.innerHTML = '';
+    // container.innerHTML = '';
     const selectedCountry = evt.target.value;
     var countryView = new CountryView(container, this.countries[selectedCountry]);
     countryView.render();
