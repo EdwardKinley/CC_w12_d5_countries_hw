@@ -1,15 +1,17 @@
 body {
   background-color: gold;
   font-family: sans-serif;
-  border: 0.3rem solid black;
+  /* border: 0.3rem solid black; */
 }
 
 .top {
-  border: 0.3rem solid blue;
+  /* border: 0.3rem solid blue; */
+  background-color: lightblue;
 }
 
 .main {
-  border: 0.3rem solid red;
+  /* border: 0.3rem solid red; */
+  background-color: pink;
 }
 
 .top, .main {
@@ -30,4 +32,5 @@ select {
   color: maroon;
   padding: 1rem;
   margin: 1rem;
+  display: inline-block;
 }

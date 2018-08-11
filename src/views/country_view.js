@@ -9,6 +9,11 @@ CountryView.prototype.render = function () {
   const countryContainer = document.createElement('div');
   countryContainer.classList.add('countryContainer');
 
+  const flag = document.createElement('img');
+  flag.setAttribute('src', this.country.flag);
+  flag.setAttribute('width', '150rem');
+  countryContainer.appendChild(flag);
+
   const name = document.createElement('h3');
   name.textContent = `${this.country.name}`;
   countryContainer.appendChild(name);
