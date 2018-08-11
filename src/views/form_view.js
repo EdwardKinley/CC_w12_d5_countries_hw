@@ -10,11 +10,18 @@ FormView.prototype.bindEvents = function () {
   PubSub.subscribe('Countries:data-loaded', (evt) => {
     this.countries = evt.detail;
     this.displayDropDown(this.countries);
+    var container = document.querySelector('.main');
+    container.innerHTML = '';
+    this.countries.forEach((country) => {
+      const selectedCountry = country;
+      var countryView = new CountryView(container, country);
+      countryView.render();
+    });
   });
 
   document.querySelector('#dropdown').addEventListener('change', (evt) => {
     var container = document.querySelector('.main');
-    // container.innerHTML = '';
+    container.innerHTML = '';
     const selectedCountry = evt.target.value;
     var countryView = new CountryView(container, this.countries[selectedCountry]);
     countryView.render();
