@@ -49,7 +49,7 @@ CountryView.prototype.render = function () {
 
   const nameClassElements = document.querySelectorAll(`.${nameClassName}`);
   if (nameClassElements) {
-    nameClassElements.forEach ((element) => {
+    nameClassElements.forEach (element => {
       element.addEventListener('click', (evt) => {
         console.log(`${this.country.name}!`);
         this.container.innerHTML='';
@@ -58,6 +58,22 @@ CountryView.prototype.render = function () {
     });
   };
 
+  // this.setUpRegionLink();
+
 };
+
+// CountryView.prototype.setUpRegionLink = function () {
+//   if (this.country.region) {
+//     this.container.innerHTML='';
+//     const regionClassName = this.country.region.split(' ').join('').replace(/[(.')]/g, '');
+//     const regionClassElements = document.querySelectorAll(`.${regionClassName}`);
+//     regionClassElements.forEach (element => {
+//       element.addEventListener('click', (evt) => {
+//         console.log(`${this.country.name}`);
+//         this.render();
+//       });
+//     });
+//   };
+// };
 
 module.exports = CountryView;
