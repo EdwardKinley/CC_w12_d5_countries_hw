@@ -1,5 +1,5 @@
 body {
-  background-color: gold;
+  background-color: pink;
   font-family: sans-serif;
   /* border: 0.3rem solid black; */
 }
@@ -33,4 +33,15 @@ select {
   padding: 1rem;
   margin: 1rem;
   display: inline-block;
+  width: 12.5rem;
+}
+
+#Albania {
+  background-color: blue;
+}
+#Europe {
+  background-color: green;
+}
+#SouthernEurope {
+  background-color: red;
 }

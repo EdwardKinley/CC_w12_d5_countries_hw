@@ -11,19 +11,26 @@ CountryView.prototype.render = function () {
 
   const flag = document.createElement('img');
   flag.setAttribute('src', this.country.flag);
-  flag.setAttribute('width', '150rem');
+  flag.setAttribute('height', '100rem');
+  const nameClassName = this.country.name.split(' ').join('').replace(/[(.')]/g, '');
+  flag.setAttribute('class', nameClassName);
   countryContainer.appendChild(flag);
 
   const name = document.createElement('h3');
   name.textContent = `${this.country.name}`;
+  name.setAttribute('class', nameClassName);
   countryContainer.appendChild(name);
 
   const region = document.createElement('h5');
   region.textContent = `Region: ${this.country.region}`;
+  const regionClassName = this.country.region.split(' ').join('').replace(/[(.')]/g, '');
+  region.setAttribute('class', regionClassName);
   countryContainer.appendChild(region);
 
   const subregion = document.createElement('h5');
   subregion.textContent = `Subregion: ${this.country.subregion}`;
+  const subregionClassName = this.country.subregion.split(' ').join('').replace(/[(.')]/g, '');
+  subregion.setAttribute('class', subregionClassName);
   countryContainer.appendChild(subregion);
 
   const capital = document.createElement('h5');
@@ -39,6 +46,18 @@ CountryView.prototype.render = function () {
   countryContainer.appendChild(area);
 
   this.container.appendChild(countryContainer);
+
+  const nameClassElements = document.querySelectorAll(`.${nameClassName}`);
+  if (nameClassElements) {
+    nameClassElements.forEach ((element) => {
+      element.addEventListener('click', (evt) => {
+        console.log(`${this.country.name}!`);
+        this.container.innerHTML='';
+        this.render();
+      });
+    });
+  };
+
 };
 
 module.exports = CountryView;
