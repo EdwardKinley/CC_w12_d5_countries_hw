@@ -1,5 +1,6 @@
 const PubSub = require('../helpers/pub_sub.js');
 const CountryView = require('./country_view.js');
+const CountryListView = require('./country_list_view.js');
 
 const FormView = function (container) {
   this.container = container;
@@ -20,9 +21,9 @@ FormView.prototype.bindEvents = function () {
     countryView.render();
   });
 
-  document.querySelector('h1').addEventListener('click', (evt) => {
-    this.displayCountries(this.countries);
-  });
+  // document.querySelector('h1').addEventListener('click', (evt) => {
+  //   this.displayCountries(this.countries);
+  // });
 };
 
 FormView.prototype.displayDropDown = function(countries) {

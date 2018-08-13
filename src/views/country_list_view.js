@@ -10,6 +10,10 @@ CountryListView.prototype.bindEvents = function () {
     this.countries = evt.detail;
     this.displayCountries(this.countries);
   });
+
+  document.querySelector('h1').addEventListener('click', (evt) => {
+    this.displayCountries(this.countries);
+  });
 };
 
 CountryListView.prototype.displayCountries = function (countries) {
