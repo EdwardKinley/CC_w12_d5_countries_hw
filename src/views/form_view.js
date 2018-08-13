@@ -10,7 +10,6 @@ FormView.prototype.bindEvents = function () {
   PubSub.subscribe('Countries:data-loaded', (evt) => {
     this.countries = evt.detail;
     this.displayDropDown(this.countries);
-    this.displayCountries(this.countries);
   });
 
   document.querySelector('#dropdown').addEventListener('change', (evt) => {
@@ -23,16 +22,6 @@ FormView.prototype.bindEvents = function () {
 
   document.querySelector('h1').addEventListener('click', (evt) => {
     this.displayCountries(this.countries);
-  });
-};
-
-FormView.prototype.displayCountries = function (countries) {
-  var container = document.querySelector('.main');
-  container.innerHTML = '';
-  countries.forEach((country) => {
-    const selectedCountry = country;
-    var countryView = new CountryView(container, country);
-    countryView.render();
   });
 };
 

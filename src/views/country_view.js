@@ -43,9 +43,11 @@ CountryView.prototype.render = function () {
   countryContainer.appendChild(population);
 
   const area = document.createElement('h5');
-  area.textContent = `Area: `;
   if (this.country.area) {
-  area.textContent = `Area: ${this.country.area.toLocaleString()} sq km`;}
+    area.textContent = `Area: ${this.country.area.toLocaleString()} sq km`;
+  } else {
+    area.textContent = `Area: `;
+  };
   countryContainer.appendChild(area);
 
   this.container.appendChild(countryContainer);
