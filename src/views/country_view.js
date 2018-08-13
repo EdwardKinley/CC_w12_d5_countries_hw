@@ -38,11 +38,13 @@ CountryView.prototype.render = function () {
   countryContainer.appendChild(capital);
 
   const population = document.createElement('h5');
-  population.textContent = `Population: ${this.country.population}`;
+  const populationWithCommas = this.country.population.toLocaleString();
+  population.textContent = `Population: ${populationWithCommas}`;
   countryContainer.appendChild(population);
 
   const area = document.createElement('h5');
-  area.textContent = `Area: ${this.country.area} sq km`;
+  const areaWithCommas = this.country.area.toLocaleString();
+  area.textContent = `Area: ${areaWithCommas} sq km`;
   countryContainer.appendChild(area);
 
   this.container.appendChild(countryContainer);
