@@ -26,6 +26,17 @@ CountryListView.prototype.displayCountries = function (countries) {
   });
 };
 
+CountryListView.prototype.renderByRegion = function (region) {
+  this.container.innerHTML='';
+  const regionClassName = region.split(' ').join('').replace(/[(.')]/g, '');
+  const regionClassElements = document.querySelectorAll(`.${regionClassName}`);
+  regionClassElements.forEach (element => {
+      console.log(element);
+      element.render();
+  });
+};
+
+
 
 
 module.exports = CountryListView;

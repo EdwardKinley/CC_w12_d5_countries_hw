@@ -1,4 +1,5 @@
 const PubSub = require('../helpers/pub_sub.js');
+const CountryListView = require ('./country_list_view.js');
 
 const CountryView = function (container, country) {
   this.container = container;
@@ -23,6 +24,11 @@ CountryView.prototype.render = function () {
 
   const region = document.createElement('h5');
   region.textContent = `Region: ${this.country.region}`;
+  region.addEventListener('click', (evt) => {
+    console.log(`${this.country.region}`);
+    // const countryListView = new CountryListView(this.container);
+    // countryListView.renderByRegion(this.country.region);
+  });
   const regionClassName = this.country.region.split(' ').join('').replace(/[(.')]/g, '');
   region.setAttribute('class', regionClassName);
   countryContainer.appendChild(region);
