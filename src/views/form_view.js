@@ -15,6 +15,7 @@ FormView.prototype.bindEvents = function () {
     this.regions = this.countries.map(country => country.region);
     this.regionsReal = this.regions.filter(region => region);
     this.regionsUnique = this.regionsReal.filter((region, index, regions) => regions.indexOf(region) === index).sort();
+    this.regionsUnique.push('other/none/unknown/etc');
     this.displayRegionDropDown(this.regionsUnique);
 
     this.subregions = this.countries.map(country => country.subregion);
@@ -46,6 +47,7 @@ FormView.prototype.bindEvents = function () {
 };
 
 FormView.prototype.filterCountriesByRegion = function (countries, region) {
+  // if (region = 'other/none/unknown/etc') { return  };
   return countries.filter(country => country.region === region);
 };
 
@@ -65,8 +67,9 @@ FormView.prototype.displayRegionDropDown = function(regions) {
   var dropdown = document.querySelector('#region-dropdown');
 
   regions.forEach((region, index) => {
+    const number = this.filterCountriesByRegion(this.countries, region).length;
     const option = document.createElement('option');
-    option.textContent = region;
+    option.textContent = `${region} (${number})`;
     option.value = region;
     dropdown.appendChild(option);
   });
